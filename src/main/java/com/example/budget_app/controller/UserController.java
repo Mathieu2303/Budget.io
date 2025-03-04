@@ -22,7 +22,7 @@ public class UserController {
     @GetMapping
     public ApiResponse homeController() {
         ApiResponse res = new ApiResponse();
-        res.setMessage("welcom to budget-app api");
+        res.setMessage("welcome to budget-app api");
         res.setStatus(true);
         return res;
     }
@@ -36,6 +36,12 @@ public class UserController {
     public Optional<UserEntity> findUserById(@PathVariable("id") Long id) {
         return userService.findUserById(id);
     }
+
+    @GetMapping("/{id}/totalExpenses")
+    public Optional<UserEntity> findExpensiseById(@PathVariable("id") Long id) {
+        return userService.findExpenseById(id);
+    }
+
     @PostMapping
     public UserEntity saveUser(@RequestBody UserEntity user) {
         return userService.saveUser(user);

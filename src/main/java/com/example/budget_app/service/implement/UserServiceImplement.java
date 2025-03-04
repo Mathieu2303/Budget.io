@@ -41,4 +41,9 @@ public class UserServiceImplement implements UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<UserEntity> findExpenseById(Long id) {
+        return userRepository.findExpenseById(id);
+    }
 }

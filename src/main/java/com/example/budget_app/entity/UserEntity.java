@@ -13,12 +13,15 @@ public class UserEntity {
     private Long id;
     @Column(name="user_name")
     private String name;
+    @Column(name="user_total_balance")
+    private Double totalBalance;
 
     public UserEntity() {}
 
     public UserEntity(Long id, String name) {
         this.id = id;
         this.name = name;
+        this.totalBalance = 0.0;
     }
 
     public Long getId() {
@@ -37,6 +40,12 @@ public class UserEntity {
         this.name = name;
     }
 
+    public Double getTotalBalance() {
+        return totalBalance;
+    }
 
+    public void setTotalBalance(Double totalBalance) {
+        this.totalBalance = totalBalance;
+    }
 
 }
