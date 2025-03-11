@@ -43,7 +43,11 @@ public class UserServiceImplement implements UserService {
     }
 
     @Override
-    public Optional<UserEntity> findExpenseById(Long id) {
-        return userRepository.findExpenseById(id);
+    public UserEntity updateUserBalance(Long userId, Double amount) {
+        UserEntity user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with ID: " + userId)); // Extract UserEntity
+
+        user.setTotalBalance(amount);
+        return userRepository.save(user);
     }
 }

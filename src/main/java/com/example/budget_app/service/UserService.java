@@ -11,4 +11,6 @@ public interface UserService {
     UserEntity updateUser(UserEntity user);
     void deleteUser(Long id);
 
+    UserEntity updateUserBalance(Long userId, Double amount);
+
 }

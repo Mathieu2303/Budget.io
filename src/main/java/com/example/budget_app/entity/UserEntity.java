@@ -1,12 +1,11 @@
 package com.example.budget_app.entity;
-
 import jakarta.persistence.*;
-import org.apache.catalina.User;
 
 @Entity
 @Table(name ="user_info")
 
 public class UserEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="user_id")
@@ -16,7 +15,10 @@ public class UserEntity {
     @Column(name="user_total_balance")
     private Double totalBalance;
 
-    public UserEntity() {}
+
+    public UserEntity() {
+        this.totalBalance = 0.0; // Ensures balance is never null
+    }
 
     public UserEntity(Long id, String name) {
         this.id = id;

@@ -4,6 +4,7 @@ import com.example.budget_app.entity.ApiResponse;
 import com.example.budget_app.entity.UserEntity;
 import com.example.budget_app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,10 +38,10 @@ public class UserController {
         return userService.findUserById(id);
     }
 
-    @GetMapping("/{id}/totalExpenses")
-    public Optional<UserEntity> findExpensiseById(@PathVariable("id") Long id) {
-        return userService.findExpenseById(id);
-    }
+//    @GetMapping("/{id}/totalExpenses")
+//    public Optional<UserEntity> findExpensiseById(@PathVariable("id") Long id) {
+//        return userService.findExpenseById(id);
+//    }
 
     @PostMapping
     public UserEntity saveUser(@RequestBody UserEntity user) {
@@ -50,6 +51,16 @@ public class UserController {
 //    public UserEntity updateUser(@RequestBody UserEntity user) {
 //        return userService.updateUser(user);
 //    }
+
+    @PutMapping("/{userId}/balance")
+    public ResponseEntity<UserEntity> updateUserBalance(
+            @PathVariable("userId") Long userId,
+            @RequestParam("amount") Double amount) {
+
+        UserEntity updatedUser = userService.updateUserBalance(userId, amount);
+        return ResponseEntity.ok(updatedUser);
+    }
+
     @DeleteMapping("/{id}")
     public ApiResponse deleteUserById(@PathVariable("id") Long id){
         userService.deleteUser(id);
