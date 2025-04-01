@@ -8,8 +8,8 @@ public interface UserService {
     List<UserEntity> findAllUsers();
     Optional<UserEntity> findUserById(Long id);
     UserEntity saveUser(UserEntity user);
-    UserEntity updateUser(UserEntity user);
     void deleteUser(Long id);
+    void deleteUserBalance(Long id);
 
     UserEntity updateUserBalance(Long userId, Double amount);
 

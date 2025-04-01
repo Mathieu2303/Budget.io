@@ -33,13 +33,13 @@ public class UserServiceImplement implements UserService {
     }
 
     @Override
-    public UserEntity updateUser(UserEntity user) {
-        return userRepository.save(user);
+    public void deleteUser(Long id) {
+        userRepository.deleteById(id);
     }
 
     @Override
-    public void deleteUser(Long id) {
-        userRepository.deleteById(id);
+    public void deleteUserBalance(Long id) {
+        userRepository.deleteUserBalance(id);
     }
 
     @Override

@@ -50,4 +50,6 @@ public class UserEntity {
         this.totalBalance = totalBalance;
     }
 
+    public void deleteUserBalance(Long id) {}
+
 }
