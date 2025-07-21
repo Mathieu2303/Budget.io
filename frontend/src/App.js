@@ -1,15 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 
-import UserForm from './components/UserForm';
+import './components/header.css';
+import './components/form.css';
+import ExpenseForm from './components/expenseForm';
+import HeaderWelcome from './components/headerWelcome';
+import ExpenseList from './components/expenseList';
 
 function App() {
-  return (
-    <div>
-      <h1>User Form</h1>
-      <UserForm />
-    </div>
-  );
+    return (
+        <div>
+            <HeaderWelcome />
+            <ExpenseForm />
+            <ExpenseList />
+            
+        </div>
+    );
 }
 
 export default App;
