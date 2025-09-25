@@ -1,0 +1,3 @@
+.main-container {
+    display: flex;        /* make children sit side by side */
+}

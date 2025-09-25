@@ -1,11 +1,17 @@
 import { useState } from "react";
 import axios from "axios";
 import "./form.css"; 
+import "./expenseList";
+// import { fetchUsers } from "./expenseList";
+
+
 
 function UserForm() {
     const [name, setName] = useState("");
     const [balance, setTotalBalance] = useState("");
 
+
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -16,14 +22,9 @@ function UserForm() {
             };
 
             try {
-                const response = await axios.post(
-                    "http://localhost:8080/api/users/create",
-                    newUser
-                );
+                const response = await axios.post("http://localhost:8080/api/users/create",newUser);
                 console.log("User created:", response.data);
                 alert(`User created with ID: ${response.data.id}`);
-
-                // Clear form after submission
                 setName("");
                 setTotalBalance("");
             } catch (error) {
@@ -37,9 +38,9 @@ function UserForm() {
 
     return (
         <form onSubmit={handleSubmit} className="user-form">
-            <h2>Register User</h2>
+            <h2>Register Expense</h2>
 
-            <label htmlFor="user-name">Name:</label>
+            <label htmlFor="user-name">Expense Name:</label>
             <input
                 type="text"
                 id="user-name"

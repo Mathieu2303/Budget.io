@@ -2,10 +2,12 @@
     background: #ffffff;
     padding: 30px;
     max-width: 600px;
-    margin: 20px auto;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     font-family: 'Segoe UI', sans-serif;
+    flex-grow: 1;      /* take remaining space */
+    max-width: 600px;
+
 }
 
 .user-list h2 {

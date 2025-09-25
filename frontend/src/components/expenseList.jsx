@@ -14,7 +14,7 @@ function ExpenseList(){
 
     const fetchUsers = async () => {
             try {
-                const response = await axios.get("http://localhost:8080/api/users");
+                const response = await axios.get("http://localhost:8080/api/expenses/getAllUsers");
                 console.log("Fetched users:", response.data); 
                 setUsers(response.data);
                 setLoading(false);
@@ -42,11 +42,11 @@ function ExpenseList(){
 
         return(
             <div className="user-list">
-                <h2>Registered Users</h2>
+                <h2>Registered Expense</h2>
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Expense</th>
                             <th>Total Balance</th>
                         </tr>
                     </thead>

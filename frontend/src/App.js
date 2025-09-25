@@ -2,16 +2,17 @@ import './App.css';
 
 import './components/header.css';
 import './components/form.css';
-import ExpenseForm from './components/expenseForm';
-import HeaderWelcome from './components/headerWelcome';
-import ExpenseList from './components/expenseList';
-
+import './components/mainComp.css';
+import React from "react";
+import MainComponent from "./components/main-container";
+import HeaderWelcome from "./components/headerWelcome";
 function App() {
     return (
         <div>
-            <HeaderWelcome />
-            <ExpenseForm />
-            <ExpenseList />
+            <div>
+                <HeaderWelcome />
+                <MainComponent />
+            </div>
             
         </div>
     );
